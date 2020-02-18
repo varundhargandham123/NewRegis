@@ -1,30 +1,76 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="NewRegis.WebForm1" %>
 
 <!DOCTYPE html>
-
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    
      <script src="JavaScript.js" type="text/javascript">
+ </script>
+    <%--<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>--%>
+    <%--<script>
+        $(document).ready(function ()
+        {
+            $('#Button1').click(function ()
+            {
+                var firstname = $('#TextBox1').val();
+                if (firstname == '')
+                {
+                    alert("Please enter first name");
+                    return false;
+                }
+                var lastname = $('#TextBox2').val();
+                if (lastname == '')
+                {
+                    alert("Please enter last name");
+                    return false;
+                }
+                var email = $('#TextBox3').val();
+                if (email == '')
+                {
+                    alert("Please enter email");
+                    return false;
+                }
+                var phno = $('#TextBox4').val();
+                if (phno == '')
+                {
+                    alert("Please enter ph no");
+                    return false;
+                }
+                return true;
+            });
+        });
 
-        </script>
+ 
+
+    </script>--%>
     <title></title>
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
-        </div>
+        <br />
         <asp:Label ID="Label1" runat="server" Text="First Name"></asp:Label>
 &nbsp;&nbsp;
         <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+        &nbsp;<asp:Label ID="Label2" runat="server" Text=""></asp:Label>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <br />
         Last Name&nbsp;&nbsp;
         <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+        &nbsp;
+        <asp:Label ID="Label3" runat="server" Text=""></asp:Label>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <br />
         Email&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:Label ID="Label4" runat="server" Text=""></asp:Label>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <br />
         Ph No&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
+        &nbsp;&nbsp;
+        <asp:Label ID="Label5" runat="server" Text=""></asp:Label>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <br />
         Gender:<br />
         <asp:RadioButtonList ID="RadioButtonListGender" runat="server" Height="16px" Width="87px">
@@ -71,7 +117,8 @@
             </SelectParameters>
         </asp:SqlDataSource>
         <br />
-        <asp:Button ID="Button1" runat="server" Text="Submit"  OnClientClick="return validateForm()" />
+        <asp:Button ID="Button1" runat="server" Text="Submit" OnClick="Submit_Click"/>
+      <%-- OnClientClick="return validateForm()" --%>
     </form>
 </body>
 </html>
